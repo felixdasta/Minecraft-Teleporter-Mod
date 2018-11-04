@@ -1,0 +1,18 @@
+
+[
+  {
+    "modid": "tilemod",
+    "name": "Beautiful Tile Mod",
+    "version": "${1.0}",
+    "mcversion": "${1.12.2}",
+    "description": "A mod that adds a beautiful tile",
+    "credits": "Josian Velez, who made the Minecraft Phase instructions, and Loremaster from youtube :)",
+    "url": "https://github.com/UPRM-CIIC4010-F18/minecraft-modcraft",
+    "updateUrl": "",
+    "authorList": ["felixdasta"],
+    "logoFile": "",
+    "screenshots": [],
+    "parent":"",
+    "dependencies": ["mod_MinecraftForge"]
+  }
+]
