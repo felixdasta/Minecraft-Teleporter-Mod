@@ -1,4 +1,4 @@
-package modcraft.blocks;
+package com.modcraft.projectmod.blocks;
 
 import com.modcraft.projectmod.blocks.BlockBase;
 import net.minecraft.block.material.Material;
