@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "pm:blocks/lasha_sand_block"
+   }
+}
