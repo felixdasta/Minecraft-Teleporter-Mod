@@ -1,5 +1,7 @@
 //Items
 item.sand_brick.name=Sand Brick
+item.sand_clay.name=Sand Clay
 
 //Blocks
 tile.lasha_sand_block.name=Lasha Sand Block
+tile.sand_clay_block.name=Sand Clay Block
