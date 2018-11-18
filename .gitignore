@@ -30,7 +30,7 @@ hs_err_pid*
 /gradlew.bat
 /minecraft-plzworknow_Client.launch
 /minecraft-plzworknow_Server.launch
-.classpath
+/.classpath
 /.gradle/
 /.gradle
 /build/
