@@ -1,0 +1,18 @@
+{ 
+    "type": "minecraft:crafting_shapeless",
+
+    "ingredients": 
+    [
+
+    {
+      "item": "pm:lasha_sand_block"
+    }
+    
+    ],
+
+    "result": 
+    {
+        "item": "pm:sand_brick",
+        "count": 9
+    }
+}
