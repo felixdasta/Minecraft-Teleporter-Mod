@@ -5,3 +5,16 @@ item.sand_clay.name=Sand Clay
 //Blocks
 tile.lasha_sand_block.name=Lasha Sand Block
 tile.sand_clay_block.name=Sand Clay Block
+
+//Tools
+item.nova_sword.name=Nova Sword
+item.nova_pickaxe.name=Nova Pickaxe
+item.nova_axe.name=Nova Axe
+item.nova_shovel.name=Nova Shovel
+item.nova_hoe.name=Nova Hoe
+
+//Armor
+item.nova_helmet.name=Nova Helmet
+item.nova_chestplate.name=Nova Chestplate
+item.nova_leggings.name=Nova Leggings
+item.nova_boots.name=Nova Boots
