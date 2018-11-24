@@ -3,18 +3,13 @@
     
     "pattern":
     [
-        " I ",
-        "IBI",
+        "RIR",
+        "IRI",
         "RIR"
     ],
     
     "key":
-    {
-        "B":
-        {
-            "item": "pm:sand_brick"
-        },
-        
+    {        
         "I":
         {
             "item": "minecraft:iron_ingot"
@@ -28,7 +23,7 @@
     
     "result":
     {
-        "item": "pm:remote_control",
+        "item": "pm:tablet",
         "count": 1
     }
 }
