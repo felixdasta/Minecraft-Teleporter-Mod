@@ -2,6 +2,7 @@
 item.sand_brick.name=Sand Brick
 item.sand_clay.name=Sand Clay
 item.remote_control.name=Remote Control
+item.teleport_button.name=Teleport Button
 
 //Blocks
 tile.lasha_sand_block.name=Lasha Sand Block

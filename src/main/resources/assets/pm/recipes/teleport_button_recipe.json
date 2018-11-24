@@ -3,9 +3,9 @@
     
     "pattern":
     [
-        " I ",
-        "IBI",
-        "RIR"
+        "BIB",
+        "IRI",
+        "BIB"
     ],
     
     "key":
@@ -28,7 +28,7 @@
     
     "result":
     {
-        "item": "pm:remote_control",
+        "item": "pm:teleport_button",
         "count": 1
     }
 }
