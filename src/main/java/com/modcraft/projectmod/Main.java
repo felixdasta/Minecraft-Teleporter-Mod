@@ -1,5 +1,6 @@
 package com.modcraft.projectmod;
 
+import com.modcraft.projectmod.gui.GuiHandler;
 import com.modcraft.projectmod.init.ModRecipes;
 import com.modcraft.projectmod.proxy.CommonProxy;
 import com.modcraft.projectmod.util.Reference;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
@@ -25,12 +27,14 @@ public class Main {
 	
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event) {
+		proxy.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
 	}
 	
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
 		ModRecipes.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 	}
 	
 	@EventHandler

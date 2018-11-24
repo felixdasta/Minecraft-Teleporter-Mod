@@ -1,0 +1,8 @@
+{
+   "parent": "block/orientable",
+   "textures": {
+       "top": "pm:blocks/teleporter_block_up",
+       "front": "pm:blocks/teleporter_block",
+       "side": "pm:blocks/teleporter_block"
+   }
+}

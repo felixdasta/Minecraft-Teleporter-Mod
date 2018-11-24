@@ -6,6 +6,7 @@ item.remote_control.name=Remote Control
 //Blocks
 tile.lasha_sand_block.name=Lasha Sand Block
 tile.sand_clay_block.name=Sand Clay Block
+tile.teleporter_block=Teleporter Block
 
 //Tools
 item.nova_sword.name=Nova Sword

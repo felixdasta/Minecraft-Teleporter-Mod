@@ -6,13 +6,13 @@ import com.modcraft.projectmod.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
 
-public class Toolaxe extends ItemAxe implements IHasModel {
+public class ToolAxe extends ItemAxe implements IHasModel {
 
-	public Toolaxe(String name, ToolMaterial material) {
+	public ToolAxe(String name, ToolMaterial material) {
 		super(material, 10.0F, -2.5F);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.MATERIALS);
+		setCreativeTab(CreativeTabs.TOOLS);
 		ModItems.ITEMS.add(this);
 
 	}

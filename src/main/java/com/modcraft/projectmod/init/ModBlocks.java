@@ -2,9 +2,10 @@ package com.modcraft.projectmod.init;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.modcraft.projectmod.blocks.BlockBase;
+
 import com.modcraft.projectmod.blocks.LashaSandBlock;
 import com.modcraft.projectmod.blocks.SandClayBlock;
+import com.modcraft.projectmod.blocks.TeleporterBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -16,5 +17,5 @@ public class ModBlocks {
 	//Blocks
 	public static final Block LASHA_SAND_BLOCK = new LashaSandBlock("lasha_sand_block", Material.ROCK);
 	public static final Block SAND_CLAY_BLOCK = new SandClayBlock("sand_clay_block", Material.CLAY);
-
+	public static final Block TELEPORTER_BLOCK = new TeleporterBlock("teleporter_block", Material.IRON);
 }
