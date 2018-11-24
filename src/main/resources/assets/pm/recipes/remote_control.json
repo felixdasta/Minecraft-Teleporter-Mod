@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " B ",
+        "BIB",
+        "RBR"
+    ],
+    
+    "key":
+    {
+        "B":
+        {
+            "item": "pm:sand_brick"
+        },
+        
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        },
+        
+        "R":
+        {
+            "item": "minecraft:redstone"
+        }
+    },
+    
+    "result":
+    {
+        "item": "pm:remote_control",
+        "count": 1
+    }
+}

@@ -1,6 +1,7 @@
 //Items
 item.sand_brick.name=Sand Brick
 item.sand_clay.name=Sand Clay
+item.remote_control.name=Remote Control
 
 //Blocks
 tile.lasha_sand_block.name=Lasha Sand Block
