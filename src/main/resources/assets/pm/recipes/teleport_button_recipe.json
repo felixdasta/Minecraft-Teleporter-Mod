@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "BIB",
+        "IRI",
+        "BIB"
+    ],
+    
+    "key":
+    {
+        "B":
+        {
+            "item": "pm:sand_brick"
+        },
+        
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        },
+        
+        "R":
+        {
+            "item": "minecraft:redstone"
+        }
+    },
+    
+    "result":
+    {
+        "item": "pm:teleport_button",
+        "count": 1
+    }
+}
