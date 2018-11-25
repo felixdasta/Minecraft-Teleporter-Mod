@@ -25,12 +25,23 @@ public class TeleporterBlockGui extends GuiContainer{
 	}
 	
 	@Override
+	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		this.fontRenderer.drawString("Teleporter", 
+		(this.xSize / 2 - this.fontRenderer.getStringWidth("Teleporter") / 2) + 3,
+		8, 4210752);
+		this.fontRenderer.drawString("Usages:", 
+		(this.xSize / 2 - this.fontRenderer.getStringWidth("Usages:") / 2) + 3,
+		24, 4210752);
+		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(),
+		6, this.ySize - 92, 4210752);
+	}
+	
+	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, 
 				"textures/gui/container/teleporter_block_gui.png"));
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
-		
 	}
 	
 	

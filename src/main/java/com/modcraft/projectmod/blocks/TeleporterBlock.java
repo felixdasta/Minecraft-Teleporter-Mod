@@ -1,6 +1,7 @@
 package com.modcraft.projectmod.blocks;
 import com.modcraft.projectmod.Main;
 import com.modcraft.projectmod.gui.GuiHandler;
+import com.modcraft.projectmod.init.ModItems;
 import com.modcraft.projectmod.tileentity.TeleporterBlockTileEntity;
 
 import net.minecraft.block.ITileEntityProvider;
@@ -28,16 +29,14 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if(!worldIn.isRemote){
-			playerIn.openGui(Main.instance, GuiHandler.TELEPORTER_BLOCK, worldIn,
-					pos.getX(), pos.getY(), pos.getZ());
-//			if(worldIn.getTileEntity(pos) instanceof TeleporterBlockTileEntity){
-//				TeleporterBlockTileEntity teleporterBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(pos);
-//				if(playerIn.getActiveItemStack().getItem() != null){
-//					if(playerIn.getActiveItemStack().getItem().equals(ModItems.REMOTE_CONTROL)){
-//
-//					}
-//				}
-//			}
+			if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TELEPORT_BUTTON)){
+
+			}else if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TABLET)){
+
+			}else{
+				playerIn.openGui(Main.instance, GuiHandler.TELEPORTER_BLOCK, worldIn,
+						pos.getX(), pos.getY(), pos.getZ());
+			}
 		}
 		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 	}
