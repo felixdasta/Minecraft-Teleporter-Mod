@@ -43,7 +43,7 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 				 }else if(theBlock.getId() == 1){
 					 theBlock.setId(2);
 				 }else{
-					 theBlock.setId(0);;
+					 theBlock.setId(0);
 				 }
 				 id = theBlock.getId();
 				 playerIn.sendMessage(new TextComponentString
@@ -53,7 +53,7 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 						pos.getX(), pos.getY(), pos.getZ());
 			}
 		}
-		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+		return true;
 	}
 
 	@Override
