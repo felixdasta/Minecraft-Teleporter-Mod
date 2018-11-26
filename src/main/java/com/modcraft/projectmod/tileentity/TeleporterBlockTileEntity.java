@@ -1,23 +1,21 @@
 package com.modcraft.projectmod.tileentity;
 
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TeleporterBlockTileEntity extends TileEntity implements ICapabilityProvider, IInventory{
+public class TeleporterBlockTileEntity extends TileEntity implements ITickable, IInventory{
 
 	private ItemStackHandler handler;
-	public int usages;
+	public int usagesLeft;
 	public int id = 0;
 	
 	public TeleporterBlockTileEntity() {
@@ -36,7 +34,7 @@ public class TeleporterBlockTileEntity extends TileEntity implements ICapability
 				list.appendTag(stackTag);
 			}
 		nbt.setTag("Items", list);
-		nbt.setLong("Usages Left", usages);
+		nbt.setLong("Usages Left", usagesLeft);
 		nbt.setLong("ID", id);
 	}
 		return super.writeToNBT(nbt);
@@ -45,7 +43,7 @@ public class TeleporterBlockTileEntity extends TileEntity implements ICapability
 	@Override
 	public void readFromNBT(NBTTagCompound compound){
 		NBTTagList list = compound.getTagList("Items", 10);
-		usages = (int) compound.getLong("Usages Left");
+		usagesLeft = (int) compound.getLong("Usages Left");
 		id = (int) compound.getLong("id");
 		
 		for (int i = 0; i < list.tagCount(); i++) {
@@ -94,6 +92,48 @@ public class TeleporterBlockTileEntity extends TileEntity implements ICapability
 	}
 
 	@Override
+	public int getInventoryStackLimit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getField(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setField(int id, int value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getFieldCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() {
+		if(isItemValidForSlot(0, getStackInSlot(0))) {
+		usagesLeft+= getItemBurnTime(getStackInSlot(0));
+		getStackInSlot(0).setCount(getStackInSlot(0).getCount()-1);
+		if(getStackInSlot(0).getCount()==0) {
+			setInventorySlotContents(0, ItemStack.EMPTY);
+		}
+		markDirty();
+	}	
+	}
+
+	@Override
 	public ItemStack getStackInSlot(int index) {
 		// TODO Auto-generated method stub
 		return null;
@@ -115,12 +155,6 @@ public class TeleporterBlockTileEntity extends TileEntity implements ICapability
 	public void setInventorySlotContents(int index, ItemStack stack) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public int getInventoryStackLimit() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override
@@ -146,28 +180,16 @@ public class TeleporterBlockTileEntity extends TileEntity implements ICapability
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public static boolean isItemFuel(ItemStack stack) {
+		return false;
+	}
 
-	@Override
-	public int getField(int id) {
-		// TODO Auto-generated method stub
+	public static int getItemBurnTime(ItemStack stack) {
 		return 0;
 	}
-
-	@Override
-	public void setField(int id, int value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getFieldCount() {
-		// TODO Auto-generated method stub
+	
+	public int getUsage() {
 		return 0;
-	}
-
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
 	}
 }
