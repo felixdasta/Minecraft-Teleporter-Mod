@@ -19,6 +19,8 @@ import net.minecraft.world.World;
 
 public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 
+	private int id;
+	
 	public TeleporterBlock(String name, Material material) {
 		super(name, material);
 		
@@ -30,11 +32,22 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(pos);
+		id = theBlock.getId();
 		if(!worldIn.isRemote){
 			if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TELEPORT_BUTTON)){
-				this.getTeleporterBlockInRange(worldIn, pos, playerIn, 32);
+				this.getTeleporterBlockInRange(worldIn, pos, playerIn, 64);
 			}else if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TABLET)){
-
+				 if(theBlock.getId() == 0){
+					 theBlock.setId(1);
+				 }else if(theBlock.getId() == 1){
+					 theBlock.setId(2);
+				 }else{
+					 theBlock.setId(0);;
+				 }
+				 id = theBlock.getId();
+				 playerIn.sendMessage(new TextComponentString
+				 ("Block ID: " + id));
 			}else{
 				playerIn.openGui(Main.instance, GuiHandler.TELEPORTER_BLOCK, worldIn,
 						pos.getX(), pos.getY(), pos.getZ());
@@ -55,7 +68,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -76,7 +91,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -97,7 +114,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -118,7 +137,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -139,7 +160,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -160,7 +183,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -181,7 +206,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -202,7 +229,9 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 					 BlockPos otherPos = new BlockPos(x, y, z);
 					 if(pos.equals(otherPos)) continue;
 					 if(worldIn.getTileEntity(otherPos) instanceof TeleporterBlockTileEntity){
-						 if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
+						 TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(otherPos);
+						 if(theBlock.getId() != id) continue;
+						 else if(worldIn.isAirBlock(new BlockPos(x, y+1, z)) && 
 								 worldIn.isAirBlock(new BlockPos(x, y+2, z))){
 							 playerIn.setPositionAndUpdate(x, y+1, z);
 							 playerIn.sendMessage(new TextComponentString
@@ -217,6 +246,10 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 				}
 			}
 		}
-		 playerIn.sendMessage(new TextComponentString("No teleporter block in range"));
+		 playerIn.sendMessage(new TextComponentString("No teleporter block with the same ID in range"));
+	}
+	
+	public int getId() {
+		return id;
 	}
 }

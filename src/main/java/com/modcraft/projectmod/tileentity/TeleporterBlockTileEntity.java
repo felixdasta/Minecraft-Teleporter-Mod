@@ -192,4 +192,12 @@ public class TeleporterBlockTileEntity extends TileEntity implements ITickable, 
 	public int getUsage() {
 		return 0;
 	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
 }
