@@ -8,6 +8,7 @@ import com.modcraft.projectmod.items.tools.ToolPickaxe;
 import com.modcraft.projectmod.items.tools.ToolSpade;
 import com.modcraft.projectmod.items.tools.ToolSword;
 import com.modcraft.projectmod.items.tools.ToolAxe;
+import com.modcraft.projectmod.items.tools.ToolBow;
 import com.modcraft.projectmod.items.tools.ToolHoe;
 import com.modcraft.projectmod.util.Reference;
 
@@ -17,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
@@ -43,6 +45,7 @@ public class ModItems {
 	public static final ItemPickaxe NOVA_PICKAXE = new ToolPickaxe("nova_pickaxe", MATERIAL_NOVA);
 	public static final ItemAxe NOVA_AXE = new ToolAxe("nova_axe", MATERIAL_NOVA);
 	public static final ItemHoe NOVA_Hoe = new ToolHoe("nova_hoe", MATERIAL_NOVA);
+	public static final ItemBow FAST_BOW = new ToolBow("fast_bow");
 	
 	//ARMORS
 	public static final Item NOVA_HELMET = new ArmorBase("nova_helmet", ARMOR_MATERIAL_NOVA, 1, EntityEquipmentSlot.HEAD);

@@ -1,0 +1,6 @@
+{
+    "parent": "pm:item/fast_bow",
+    "textures": {
+        "layer0": "pm:items/fast_bow_pulling_1"
+    }
+}
