@@ -250,7 +250,7 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 				}
 			}
 		}
-		 playerIn.sendMessage(new TextComponentString("No teleporter block with the same ID in range"));
+		 playerIn.sendMessage(new TextComponentString("No teleporter block with matching ID within " + range + " blocks"));
 	}
 	
 	public int getId() {

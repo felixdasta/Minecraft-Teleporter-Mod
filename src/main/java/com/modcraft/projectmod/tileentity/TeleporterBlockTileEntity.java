@@ -15,17 +15,20 @@ import net.minecraftforge.items.ItemStackHandler;
 public class TeleporterBlockTileEntity extends TileEntity implements ITickable, IInventory{
 
 	private ItemStackHandler handler;
-	public int usagesLeft;
-	public int id = 0;
+	public int usages;
+	public int id;
 	
 	public TeleporterBlockTileEntity() {
 		this.handler = new ItemStackHandler(1);
 	}
 	
 	//METHODS TO SAVE INFO IN THE BLOCK:
-	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound nbt){
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		
+		super.writeToNBT(compound);
+		
 		NBTTagList list = new NBTTagList();
+		
 		for (int i = 0; i < getSizeInventory(); i++) {
 			if(getStackInSlot(i)!=ItemStack.EMPTY) {
 				NBTTagCompound stackTag = new NBTTagCompound();
@@ -33,25 +36,28 @@ public class TeleporterBlockTileEntity extends TileEntity implements ITickable, 
 				getStackInSlot(i).writeToNBT(stackTag);
 				list.appendTag(stackTag);
 			}
-		nbt.setTag("Items", list);
-		nbt.setLong("Usages Left", usagesLeft);
-		nbt.setLong("ID", id);
-	}
-		return super.writeToNBT(nbt);
-	}
-	
-	@Override
-	public void readFromNBT(NBTTagCompound compound){
-		NBTTagList list = compound.getTagList("Items", 10);
-		usagesLeft = (int) compound.getLong("Usages Left");
-		id = (int) compound.getLong("id");
+		}
 		
+		compound.setTag("Items", list);
+		compound.setLong("Usages Left", usages);
+		compound.setInteger("ID", id);
+		
+		return compound;
+	}
+
+	public void readFromNBT(NBTTagCompound compound) {
+		
+		super.readFromNBT(compound);
+		
+		NBTTagList list = compound.getTagList("Items", 10);
+		usages = (int) compound.getLong("Usages Left");
+		id = compound.getInteger("ID");
+
 		for (int i = 0; i < list.tagCount(); i++) {
 			NBTTagCompound stackTag = list.getCompoundTagAt(i);
 			int slot = stackTag.getByte("Slot") & 255;
 			setInventorySlotContents(slot, new ItemStack(stackTag));
 		}
-		super.readFromNBT(compound);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -124,7 +130,7 @@ public class TeleporterBlockTileEntity extends TileEntity implements ITickable, 
 	@Override
 	public void update() {
 		if(isItemValidForSlot(0, getStackInSlot(0))) {
-		usagesLeft+= getItemBurnTime(getStackInSlot(0));
+		usages+= getItemBurnTime(getStackInSlot(0));
 		getStackInSlot(0).setCount(getStackInSlot(0).getCount()-1);
 		if(getStackInSlot(0).getCount()==0) {
 			setInventorySlotContents(0, ItemStack.EMPTY);
