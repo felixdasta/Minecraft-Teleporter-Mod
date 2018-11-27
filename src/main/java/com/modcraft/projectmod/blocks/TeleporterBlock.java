@@ -32,22 +32,26 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	
 		TeleporterBlockTileEntity theBlock = (TeleporterBlockTileEntity) worldIn.getTileEntity(pos);
 		id = theBlock.getId();
+		
 		if(!worldIn.isRemote){
-			if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TELEPORT_BUTTON)){
+			if(playerIn.isSneaking()) { 
+				if(facing == EnumFacing.NORTH || facing == EnumFacing.EAST ||
+						facing == EnumFacing.WEST || facing == EnumFacing.SOUTH) {
+					if(theBlock.id > 0) theBlock.id--;
+					theBlock.markDirty();
+				}
+				else theBlock.id++;
+				id = theBlock.getId();
+				playerIn.sendMessage(new TextComponentString
+						("The block ID has been set to " + id));
+			}else if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TELEPORT_BUTTON)){
 				this.getTeleporterBlockInRange(worldIn, pos, playerIn, 64);
 			}else if(playerIn.getHeldItemMainhand().getItem().equals(ModItems.TABLET)){
-				 if(theBlock.getId() == 0){
-					 theBlock.setId(1);
-				 }else if(theBlock.getId() == 1){
-					 theBlock.setId(2);
-				 }else{
-					 theBlock.setId(0);
-				 }
-				 id = theBlock.getId();
-				 playerIn.sendMessage(new TextComponentString
-				 ("Block ID: " + id));
+				playerIn.sendMessage(new TextComponentString
+						("Block ID: " + id));
 			}else{
 				playerIn.openGui(Main.instance, GuiHandler.TELEPORTER_BLOCK, worldIn,
 						pos.getX(), pos.getY(), pos.getZ());

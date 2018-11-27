@@ -24,7 +24,7 @@ public class TeleporterBlockTileEntity extends TileEntity implements ITickable, 
 	
 	//METHODS TO SAVE INFO IN THE BLOCK:
 	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound nbt){;
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt){
 		NBTTagList list = new NBTTagList();
 		for (int i = 0; i < getSizeInventory(); i++) {
 			if(getStackInSlot(i)!=ItemStack.EMPTY) {
@@ -191,10 +191,6 @@ public class TeleporterBlockTileEntity extends TileEntity implements ITickable, 
 	
 	public int getUsage() {
 		return 0;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	public int getId() {
