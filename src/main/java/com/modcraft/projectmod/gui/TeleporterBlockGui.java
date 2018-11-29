@@ -11,8 +11,8 @@ import net.minecraft.util.ResourceLocation;
 
 public class TeleporterBlockGui extends GuiContainer{
 
-	private TeleporterBlockTileEntity te;
 	private IInventory playerInv;
+	public static int usages;
 	
 	public TeleporterBlockGui(IInventory playerInv, TeleporterBlockTileEntity te) {
 		super(new TeleporterBlockContainer(playerInv, te));
@@ -20,7 +20,6 @@ public class TeleporterBlockGui extends GuiContainer{
 		this.xSize = 174;
 		this.ySize = 165;
 		
-		this.te = te;
 		this.playerInv = playerInv;
 	}
 	
@@ -29,8 +28,8 @@ public class TeleporterBlockGui extends GuiContainer{
 		this.fontRenderer.drawString("Teleporter", 
 		(this.xSize / 2 - this.fontRenderer.getStringWidth("Teleporter") / 2) + 3,
 		8, 4210752);
-		this.fontRenderer.drawString("Usages:", 
-		(this.xSize / 2 - this.fontRenderer.getStringWidth("Usages:") / 2) + 3,
+		this.fontRenderer.drawString("Usages: " + usages, 
+		(this.xSize / 2 - this.fontRenderer.getStringWidth("Usages: " + usages) / 2) + 3,
 		24, 4210752);
 		this.fontRenderer.drawString(this.playerInv.getDisplayName().getUnformattedText(),
 		6, this.ySize - 92, 4210752);
