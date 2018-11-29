@@ -15,6 +15,7 @@ item.nova_pickaxe.name=Nova Pickaxe
 item.nova_axe.name=Nova Axe
 item.nova_shovel.name=Nova Shovel
 item.nova_hoe.name=Nova Hoe
+item.fast_bow.name=Fast Bow
 
 //Armor
 item.nova_helmet.name=Nova Helmet

@@ -1,5 +1,6 @@
 package com.modcraft.projectmod;
 
+import com.modcraft.projectmod.config.ModConfig;
 import com.modcraft.projectmod.gui.GuiHandler;
 import com.modcraft.projectmod.init.ModRecipes;
 import com.modcraft.projectmod.proxy.CommonProxy;
@@ -29,6 +30,10 @@ public class Main {
 	public static void PreInit(FMLPreInitializationEvent event) {
 		proxy.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+	}
+	
+	public static void PreInit() {
+		ModConfig.preInit();
 	}
 	
 	@EventHandler

@@ -38,6 +38,7 @@ public class ModItems {
 	public static final Item SAND_CLAY = new ItemBase("sand_clay");
 	public static final Item TABLET = new ItemBase("tablet");
 	public static final Item TELEPORT_BUTTON = new ItemBase("teleport_button");
+	public static final Item DRAGONS_EYE = new ItemBase("dragons_eye");
 	
 	//TOOLS
 	public static final ItemSword NOVA_SWORD = new ToolSword("nova_sword", MATERIAL_NOVA);
