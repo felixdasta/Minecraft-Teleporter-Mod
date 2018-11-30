@@ -9,7 +9,7 @@ public class TeleporterSlot extends SlotItemHandler{
 
 	public TeleporterSlot(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
 		super(itemHandler, index, xPosition, yPosition);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override

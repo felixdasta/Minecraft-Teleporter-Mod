@@ -22,3 +22,7 @@ item.nova_helmet.name=Nova Helmet
 item.nova_chestplate.name=Nova Chestplate
 item.nova_leggings.name=Nova Leggings
 item.nova_boots.name=Nova Boots
+
+//Keybinds
+key.fly=Fly in Survival for 10xp!
+key.categories.mod=Mod

@@ -1,12 +1,13 @@
 package com.modcraft.projectmod;
 
-import com.modcraft.projectmod.config.ModConfig;
+import com.modcraft.projectmod.config.KeyInputHandler;
+import com.modcraft.projectmod.config.Keybinds;
 import com.modcraft.projectmod.gui.GuiHandler;
 import com.modcraft.projectmod.init.ModRecipes;
 import com.modcraft.projectmod.proxy.CommonProxy;
 import com.modcraft.projectmod.util.Reference;
 import com.modcraft.projectmod.world.ModWorldGen;
-
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -30,10 +31,8 @@ public class Main {
 	public static void PreInit(FMLPreInitializationEvent event) {
 		proxy.registerTileEntities();
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
-	}
-	
-	public static void PreInit() {
-		ModConfig.preInit();
+		Keybinds.register();
+		MinecraftForge.EVENT_BUS.register(new KeyInputHandler());
 	}
 	
 	@EventHandler

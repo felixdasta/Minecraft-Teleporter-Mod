@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RDR",
+        "DLD",
+        "RDR"
+    ],
+    
+    "key":
+    {        
+        "D":
+        {
+            "item": "minecraft:dye",
+    		"data": 11
+        },
+        
+        "L":
+        {
+            "item": "minecraft:lapis_block"
+        },
+        
+        "R":
+        {
+            "item": "minecraft:redstone_torch"
+        }
+    },
+    
+    "result":
+    {
+        "item": "pm:teleporter_block",
+        "count": 1
+    }
+}
