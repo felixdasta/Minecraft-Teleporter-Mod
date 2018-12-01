@@ -12,6 +12,10 @@ import net.minecraft.util.ResourceLocation;
 public class TeleporterBlockGui extends GuiContainer{
 
 	private IInventory playerInv;
+	
+	/*/The static usages variable will be used to display on the GUI the amount of usages that
+	 * the current right-clicked teleporter block has/*/
+	
 	public static int usages;
 	
 	public TeleporterBlockGui(IInventory playerInv, TeleporterBlockTileEntity te) {
