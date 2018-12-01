@@ -6,6 +6,7 @@ import com.modcraft.projectmod.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+//base class for all our items
 public class ItemBase extends Item implements IHasModel {
 
 	public ItemBase(String name) {

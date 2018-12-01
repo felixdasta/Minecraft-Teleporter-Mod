@@ -11,7 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
 public class BlockBase extends Block implements IHasModel {
-	
+
+	//This class is the base class for all blocks
 	public BlockBase(String name, Material material) {
 		
 		super(material);
@@ -23,6 +24,7 @@ public class BlockBase extends Block implements IHasModel {
 		
 	}
 
+	//registers the models of the blocks
 	@Override
 	public void registerModels() {
 		

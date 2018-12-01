@@ -5,7 +5,7 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-
+//This class is for creating keybindings in minecraft settings
 public class Keybinds {
 	
 	public static KeyBinding fly;

@@ -10,6 +10,7 @@ import com.modcraft.projectmod.blocks.TeleporterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
+//This initializes all the ModBlocks in the game
 public class ModBlocks {
 	
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
