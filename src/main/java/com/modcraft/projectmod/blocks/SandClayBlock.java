@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 
 public class SandClayBlock extends BlockBase{
 	
+	//This block can drop a unique item called sand clay
 	public SandClayBlock(String name, Material material) {
 		super(name, material);
 

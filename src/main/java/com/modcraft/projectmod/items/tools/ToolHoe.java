@@ -3,9 +3,7 @@ package com.modcraft.projectmod.items.tools;
 import com.modcraft.projectmod.Main;
 import com.modcraft.projectmod.init.ModItems;
 import com.modcraft.projectmod.util.IHasModel;
-
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemHoe;
 
 public class ToolHoe extends ItemHoe implements IHasModel{

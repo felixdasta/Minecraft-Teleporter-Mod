@@ -17,8 +17,6 @@ import net.minecraft.item.ItemArrow;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
@@ -26,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+//Unique bow that shoots faster than the regular bow
 public class ToolBow extends ItemBow implements IHasModel {
 	
 	public ToolBow(String name)
@@ -61,6 +60,7 @@ public class ToolBow extends ItemBow implements IHasModel {
         });
     }
 	
+	//change enchantment pow values
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
     {
         if (entityLiving instanceof EntityPlayer)
@@ -101,7 +101,7 @@ public class ToolBow extends ItemBow implements IHasModel {
 
                         if (j > 0)
                         {
-                            entityarrow.setDamage(entityarrow.getDamage() + (double)j * 0.5D + 0.5D);
+                            entityarrow.setDamage(entityarrow.getDamage() + (double)j * 0.8D + 0.8D);
                         }
 
                         int k = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, stack);
@@ -144,6 +144,7 @@ public class ToolBow extends ItemBow implements IHasModel {
         }
     }
 	
+	//bow shoots faster arrows
 	public static float getArrowVelocity(int charge)
     {
         float f = (float)charge / 10.0F;
@@ -157,30 +158,13 @@ public class ToolBow extends ItemBow implements IHasModel {
         return f;
     }
 	
+	//increased bow durability 
 	public int getMaxItemUseDuration(ItemStack stack)
     {
         return 80000;
     }
 	
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
-    {
-        ItemStack itemstack = playerIn.getHeldItem(handIn);
-        boolean flag = !this.findAmmo(playerIn).isEmpty();
-
-        ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemstack, worldIn, playerIn, handIn, flag);
-        if (ret != null) return ret;
-
-        if (!playerIn.capabilities.isCreativeMode && !flag)
-        {
-            return flag ? new ActionResult(EnumActionResult.PASS, itemstack) : new ActionResult(EnumActionResult.FAIL, itemstack);
-        }
-        else
-        {
-            playerIn.setActiveHand(handIn);
-            return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-        }
-    }
-	
+	//checks for ammo in players inventory 
 	private ItemStack findAmmo(EntityPlayer player)
     {
         if (this.isArrow(player.getHeldItem(EnumHand.OFF_HAND)))

@@ -11,6 +11,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+//Register all the items and blocks we implement in this mod
 @EventBusSubscriber
 public class RegistryHandler {
 	

@@ -35,23 +35,21 @@ Important Notes!
 		Sand Clay spawns the same layers as sand stone 
 		Heres a coordinate to help you find one right when you spawn -254,69,-5		
 		Dig a 4x4 block area to increase your chances to find it
+		This block drops sand clay that smelts into sand brick
 		
 	-Teleport block uses iron, gold and diamonds
 		iron = 10 usages
 		gold = 20 usages
 		diamond = 40 usages
 		Teleporter needs 100 usages
-		If player sneaks and right clicks top part of block, ID will decrease 
-		Sneak and right click side parts of the block increased ID
+		If player sneaks and right clicks without holding an item at the top part of block, ID will decrease 
+		Sneak and right click side parts of the block without holding an item increases the ID
 		Teleporter works within a 64 block radius
+		
+	-Tablet shows the id of the teleporter and how many usages it has
+		just right click at the block anywhere
+		
+	-Teleport Button is main function is to activate the teleporter
+		right click anywhere on the block
 	
-	-To fly in survival you need to be holding a sand brick item
-		need 10 levels or more to fly
-		
-		
-		
-		
-		
-		
-		
-		
+	-To fly in survival you need to be holding a sand brick item and need 10 levels or more to fly		

@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 
 public class LashaSandBlock extends BlockBase{
 
+	//This block has custom hardness and resistance values 
 	public LashaSandBlock(String name, Material material) {
 		super(name, material);
 		

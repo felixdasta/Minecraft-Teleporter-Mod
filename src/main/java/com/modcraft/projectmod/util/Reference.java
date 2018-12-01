@@ -1,5 +1,6 @@
 package com.modcraft.projectmod.util;
 
+//Reference class for our mod, showing all the details of the mod
 public class Reference {
 	
 	public static final String MOD_ID = "pm";

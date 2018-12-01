@@ -8,7 +8,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 	
-	public void registerItemRederer(Item item, int meta, String id) {}
+	public void registerItemRederer(Item item, int meta, String id) {
+		
+	}
 	
 	@SuppressWarnings("deprecation")
 	public void registerTileEntities(){

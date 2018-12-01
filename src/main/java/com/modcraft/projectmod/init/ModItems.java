@@ -25,6 +25,7 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
 
+//This initializes our unique materials, items, tools and armor in the game
 public class ModItems {
 	
 	//MATERIALS
