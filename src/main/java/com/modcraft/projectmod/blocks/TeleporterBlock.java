@@ -147,8 +147,7 @@ public class TeleporterBlock extends BlockBase implements ITileEntityProvider{
 			   If the trip will consume more usages than the amount of usages the the block has,
 			   then the teleporter will not be able to transport. The amount of usages will depend
 			   on the distance. The formula used is the distance multiplied by 1.25/*/
-			if(theBlock.usages*1.25 > 0){
-				System.out.println(distance);
+			if(theBlock.usages-distance*1.25 > 0){
 				playerIn.setPositionAndUpdate(theBlockPos.getX(), theBlockPos.getY() + 1, theBlockPos.getZ());
 				playerIn.sendMessage(new TextComponentString
 						(String.format("%s teleported to X: %d, Y: %d, Z: %d", 

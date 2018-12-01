@@ -77,5 +77,6 @@ Important Notes!
 		right click anywhere on the block
 	
 	-To fly in survival you need to be holding a sand brick item and need 10 levels or more to fly		
+	-You can change the fly keyboard in settings i the mod tabs at the end
 
 	-The created armors and tools can be accesed via creative mode only
